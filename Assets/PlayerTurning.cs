@@ -6,12 +6,13 @@ public class PlayerTurning : MonoBehaviour
 {
     float xRotation = 0f;
     public Vector2 turn;
-    public float sensitivity = 50;
+    public float Sensitivity = 50;
     public Vector3 deltaMove;
     public float speed = 1;
+    float sensitivity;
     void Start()
     {
-
+        sensitivity = Sensitivity * 10;
     }
     void Update()
     {
