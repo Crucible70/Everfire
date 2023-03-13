@@ -7,8 +7,6 @@ public class CamTurning : MonoBehaviour
     float xRotation = 0f;
     public Vector2 turn;
     public float Sensitivity = 50;
-    public Vector3 deltaMove;
-    public float speed = 1;
     float sensitivity;
     void Start()
     {
@@ -18,7 +16,7 @@ public class CamTurning : MonoBehaviour
     void Update()
     {
 
-        turn.x += Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
+        turn.x += Input.GetAxis("Mouse X") * 0 * Time.deltaTime;
         turn.y = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
         xRotation -= turn.y;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
