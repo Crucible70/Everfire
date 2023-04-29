@@ -25,14 +25,14 @@ public class PlayerMovement : MonoBehaviour
         {
             velocity.y = -10f;
         }
-        if (Input.GetButtonDown("Sprint"))
+        if (Input.GetButton("Sprint"))
         {
             speed = 24f;
         }
-        else;
-        {
-            speed = 12f;
-        }
+       else
+       {
+           speed = 12f;
+       }
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
