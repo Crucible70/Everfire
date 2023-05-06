@@ -33,6 +33,22 @@ public class PlayerMovement : MonoBehaviour
        {
            speed = 12f;
        }
+        if (Input.GetButton("Crouch"))
+        {
+            controller.height = 1;
+            controller.center = new Vector3(0, 1, 0);
+            speed = 6f;
+        }
+        else
+        {
+            controller.height = 2;
+            controller.center = new Vector3(0, 0, 0);
+        }
+        if (Input.GetButtonUp("Crouch") && isGrounded)
+        {
+            velocity.y = 6;
+        }
+
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
@@ -42,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButton("Jump") && isGrounded)
         {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            velocity.y = Mathf.Sqrt(jumpHeight * -4f * gravity);
         }
 
         velocity.y += gravity * Time.deltaTime;
