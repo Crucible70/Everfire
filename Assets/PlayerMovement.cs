@@ -38,11 +38,13 @@ public class PlayerMovement : MonoBehaviour
             controller.height = 1;
             controller.center = new Vector3(0, 1, 0);
             speed = 6f;
+            jumpHeight = 1.5f;
         }
         else
         {
             controller.height = 2;
             controller.center = new Vector3(0, 0, 0);
+            jumpHeight = 1f;
         }
         if (Input.GetButtonUp("Crouch") && isGrounded)
         {
